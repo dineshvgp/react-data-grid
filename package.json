@@ -11,7 +11,9 @@
     "build": "webpack --config ./config/webpack.config.prod.js --release true",
     "dev-server": "node webpack-dev-server.js",
     "beforepublish": "lerna run beforepublish",
-    "eslint": "./node_modules/.bin/eslint -f unix packages/react-data-grid/src/** packages/react-data-grid-addons/src/**"
+    "eslint": "./node_modules/.bin/eslint -f unix packages/react-data-grid/src/** packages/react-data-grid-addons/src/**",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -37,7 +39,8 @@
     "react-dnd-html5-backend": "^2.1.2",
     "react-select": "^1.0.0-beta14",
     "reselect": "^2.5.1",
-    "ron-react-autocomplete": "^4.0.2"
+    "ron-react-autocomplete": "^4.0.2",
+    "snyk": "^1.161.1"
   },
   "devDependencies": {
     "avcoveralls": "^1.0.0",
@@ -109,5 +112,6 @@
   "bugs": {
     "url": "https://github.com/adazzle/react-data-grid/issues"
   },
-  "homepage": "https://github.com/adazzle/react-data-grid"
+  "homepage": "https://github.com/adazzle/react-data-grid",
+  "snyk": true
 }
